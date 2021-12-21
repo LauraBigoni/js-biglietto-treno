@@ -1,3 +1,4 @@
+console.log('JS OK!')
 /*
 Traccia:
 
@@ -40,3 +41,38 @@ console.log(kmPercorsi);
 // Chiedo all'utente quanti anni ha
 const userAge = parseInt(prompt('Quanti anni hai?').trim());
 console.log(userAge);
+
+// Salvo i dati in variabili
+const price = 0.21;
+let message = 'Il costo del tuo biglietto è:';
+const sum = price * kmPercorsi;
+
+// Calcolo il prezzo 
+if (userAge >= 18 && userAge < 65) {
+    console.log(`${message} ${sum} €`); 
+}   else if (userAge < 18) { 
+        // Applico gli sconti
+        let percentage = 20;
+        let discountValue = (sum / 100) * percentage;
+        console.log(discountValue);
+        let finalPrice = (sum - discountValue).toFixed(2);
+        console.log(`${message} ${finalPrice} €`);
+}   else if (userAge >= 65) {
+        let percentage = 40;
+        let discountValue = (sum / 100) * percentage;
+        console.log(discountValue);
+        let finalPrice = (sum - discountValue).toFixed(2);
+        console.log(`${message} ${finalPrice} €`);
+    }
+
+// Recupero gli elementi in pagina
+const messageElement = document.getElementById('message');
+const kmElement = document.getElementById('km');
+const ageElement = document.getElementById('age');
+const priceElement = document.getElementById('price');
+
+// Modifico il contenuto in pagina
+messageElement.innerHTML = message;
+kmElement.innerHTML = ;
+ageElement.innerHTML = ;
+priceElement.innerHTML = ;
