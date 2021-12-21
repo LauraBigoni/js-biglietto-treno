@@ -50,31 +50,34 @@ let percentage = 0;
 let finalPrice = 0;
 let discountValue = 0;
 
-// Calcolo il prezzo 
-if (isNaN(kmPercorsi && userAge)) {
-    alert("Ops! QUALCOSA è ANDATO STORTO. L'operazione non è andata a buon fine.")
-} else if (userAge < 18) { 
-        // Applico gli sconti
-        percentage = 20;
-        discountValue = (sum / 100) * percentage;
-        console.log(discountValue);
-}   else if (userAge >= 65) {
-        percentage = 40;
-        discountValue = (sum / 100) * percentage;
-        console.log(discountValue);
-    }
-
-finalPrice = (sum - discountValue).toFixed(2);
-console.log(`${message} ${finalPrice} €`);
-
 // Recupero gli elementi in pagina
 const greetingsElement = document.getElementById('greetings');
 const kmElement = document.getElementById('km');
 const ageElement = document.getElementById('age');
 const priceElement = document.getElementById('price');
 
-// Modifico il contenuto in pagina
-greetingsElement.innerHTML = `Complimenti per aver completato l'acquisto!`;
-kmElement.innerHTML = `Devi percorrere: ${kmPercorsi} km`; 
-ageElement.innerHTML = `Hai: ${userAge} anni`;
-priceElement.innerHTML = `${message} ${finalPrice} €`;
+// Calcolo il prezzo
+finalPrice = (sum - discountValue).toFixed(2);
+console.log(`${message} ${finalPrice} €`);
+
+if (isNaN(kmPercorsi || userAge)) {
+    alert("Non hai inserito un valore corretto")
+    greetingsElement.innerHTML = `Ops! QUALCOSA è ANDATO STORTO. L'operazione non è andata a buon fine.`;
+} else {
+    // Modifico il contenuto in pagina
+    greetingsElement.innerHTML = `Complimenti per aver completato l'acquisto!`;
+    kmElement.innerHTML = `Devi percorrere: ${kmPercorsi} km`; 
+    ageElement.innerHTML = `Hai: ${userAge} anni`;
+    priceElement.innerHTML = `${message} ${finalPrice} €`;
+} 
+
+if (userAge < 18) { 
+        // Applico gli sconti
+        percentage = 20;
+        discountValue = (sum / 100) * percentage;
+        console.log(discountValue);
+} else if (userAge >= 65) {
+        percentage = 40;
+        discountValue = (sum / 100) * percentage;
+        console.log(discountValue);
+}
