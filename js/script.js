@@ -35,7 +35,7 @@ Applicare un po' di CSS se siete riusciti a fare il bonus 1
 // 9 - Modifico il contenuto testuale
 
 // Chiedo all'utente quanti km vuole percorrere
-const kmPercorsi = prompt('Quanti km devi percorrere?').trim();
+const kmPercorsi = parseInt(prompt('Quanti km devi percorrere?').trim());
 console.log(kmPercorsi);
 
 // Chiedo all'utente quanti anni ha
@@ -51,7 +51,9 @@ let finalPrice = 0;
 let discountValue = 0;
 
 // Calcolo il prezzo 
-if (userAge < 18) { 
+if (isNaN(kmPercorsi && userAge)) {
+    alert("Ops! QUALCOSA è ANDATO STORTO. L'operazione non è andata a buon fine.")
+} else if (userAge < 18) { 
         // Applico gli sconti
         percentage = 20;
         discountValue = (sum / 100) * percentage;

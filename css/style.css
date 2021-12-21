@@ -1,16 +1,9 @@
 /* Generics */
-
-
-/* Utilities */
-
-
-/* Header */
-
-
-/* Main */
-
-
-/* Section */
-
-
-/* Footer */
+.train-bg {
+    background-image: url(../img/train-ticket.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-top: 150px;
+    padding-bottom: 200px;
+    height: 600px;
+}
