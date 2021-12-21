@@ -34,5 +34,9 @@ Applicare un po' di CSS se siete riusciti a fare il bonus 1
 // 9 - Modifico il contenuto testuale
 
 // Chiedo all'utente quanti km vuole percorrere
-const kmPercorsi = prompt('Quanti km devi percorrere?');
+const kmPercorsi = prompt('Quanti km devi percorrere?').trim();
 console.log(kmPercorsi);
+
+// Chiedo all'utente quanti anni ha
+const userAge = parseInt(prompt('Quanti anni hai?').trim());
+console.log(userAge);
