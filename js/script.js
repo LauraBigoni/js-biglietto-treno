@@ -56,6 +56,19 @@ const kmElement = document.getElementById('km');
 const ageElement = document.getElementById('age');
 const priceElement = document.getElementById('price');
 
+if (userAge < 18) { 
+        // Applico gli sconti
+        percentage = 20;
+        discountValue = (sum / 100) * percentage;
+        greetingsElement.innerHTML +=`Hai ottenuto uno sconto del 20%`;
+        console.log(discountValue);
+} else if (userAge >= 65) {
+        percentage = 40;
+        discountValue = (sum / 100) * percentage;
+        greetingsElement.innerHTML += `Hai ottenuto uno sconto del 40%`;
+        console.log(discountValue);
+}
+
 // Calcolo il prezzo
 finalPrice = (sum - discountValue).toFixed(2);
 console.log(`${message} ${finalPrice} €`);
@@ -70,16 +83,3 @@ if (isNaN(kmPercorsi || userAge)) {
     ageElement.innerHTML = `Hai: ${userAge} anni`;
     priceElement.innerHTML = `${message} ${finalPrice} €`;
 } 
-
-if (userAge < 18) { 
-        // Applico gli sconti
-        percentage = 20;
-        discountValue = (sum / 100) * percentage;
-        greetingsElement.innerHTML +=`Hai ottenuto uno sconto del 20%`;
-        console.log(discountValue);
-} else if (userAge >= 65) {
-        percentage = 40;
-        discountValue = (sum / 100) * percentage;
-        greetingsElement.innerHTML += `Hai ottenuto uno sconto del 40%`;
-        console.log(discountValue);
-}
